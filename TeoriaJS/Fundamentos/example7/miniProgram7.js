@@ -42,7 +42,7 @@ if (pregunta5 == 12) {
     resultado++;
 } 
 
-alert("Juego terminado. ¡Resultado: " +resultado+" de 5!");
+alert("Juego terminado. ¡Resultado: " +resultado+ " de 5!");
 if (resultado == 0) {
     alert("¡Vaya!, creo que necesitas repasar matemáticas.");
 } else if (resultado == 1) {

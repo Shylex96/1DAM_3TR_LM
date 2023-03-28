@@ -1,35 +1,35 @@
 function mostrarConversion() {
-    let euros = document.getElementById("nombre").value;
-    let bitcoins = document.getElementById("nombre").value;
+    const euros = document.getElementById("euros").value;
+    const bitcoins = document.getElementById("bitcoins").value;
+    let resultado = "";
 
     // 1€ = 0,000040 BTC
     // 1 BTC = 25011,45€
 
-    function eurosAbitcoins() {
-        if (euros != "") {
-            let resultado;
+        if (euros && !bitcoins) {
+
             resultado = euros * 0.000040;
             resultado = resultado.toFixed(2);
+            resultado = `El resultado de la conversión es: ${resultado} bitcoins`;
 
-            // escribir en el input el resultado
-        }
-    }
+        } else if (!euros && bitcoins) {
 
-    function bitcoinsAeuros() {
-        if (bitcoins != "") {
-            let resultado;
             resultado = bitcoins * 25011.45;
             resultado = resultado.toFixed(2);
+            resultado = `El resultado de la conversión es: ${resultado} euros`;
 
-            // escribir en el input el resultado
+        } else {
+
+            alert("Debe ingresar una cantidad a convertir.");
+            alert("Rellene únicamente un campo.");
+
         }
+
+    document.getElementById("resultado").innerHTML = resultado;
     }
-}
 
-function limpiarConversion() {
-    let campoEuros = document.getElementById("euros").value = "";
-    let campoBitcoins = document.getElementById("bitcoins").value = "";
+        function limpiarConversion() {
+            document.getElementById("euros").value = "";
+            document.getElementById("bitcoins").value = "";
+        }
 
-    campoEuros;
-    campoBitcoins;
-}

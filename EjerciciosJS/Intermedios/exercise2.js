@@ -26,10 +26,14 @@ function mostrarConversion() {
         }
 
     document.getElementById("resultado").innerHTML = resultado;
+    // Por algún motivo la página se recarga sola y para evitar que vuelva a su estado original
+    // uso el evento "preventDefault()", a tener en cuenta que "event.preventDefault();" está 
+    // deprecated y es recomendable aunque funcione usar "window" delante del event.
+    window.event.preventDefault();
     }
 
-        function limpiarConversion() {
-            document.getElementById("euros").value = "";
-            document.getElementById("bitcoins").value = "";
-        }
+    function limpiarConversion() {
+        document.getElementById("euros").value = "";
+        document.getElementById("bitcoins").value = "";
+    }
 

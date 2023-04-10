@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Exercise 3</title>
+</head>
+<body>
+    <form>
+        <h1>Rellene los datos de su DNI:</h1>
+        <label>Números: </label>
+        <input type="number" id="numerosDNI" style="width: 6.2em">
+        <label>Letra: </label>
+        <input type="text" id="letraDNI" style="width: 1em; text-transform: capitalize;" >
+        <br>
+        <button onclick="calcularDNI()">Aceptar</button>
+        <button onclick="limpiarDNI()">Limpiar</button>
+    </form>
+    <br>
+    <div id="resultado"></div>
+
+    <script src="./exercise3.js"></script>
+</body>
+</html>

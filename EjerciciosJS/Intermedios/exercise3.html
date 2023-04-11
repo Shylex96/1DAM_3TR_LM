@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Exercise 3</title>
 </head>
 <body>
+
+    <h1>Ejercicios Intermedios</h1>
+    
     <form>
-        <h1>Rellene los datos de su DNI:</h1>
-        <label>Números: </label>
-        <input type="number" id="numerosDNI" style="width: 6.2em">
-        <label>Letra: </label>
-        <input type="text" id="letraDNI" style="width: 1em; text-transform: capitalize;" >
-        <br>
-        <button onclick="calcularDNI()">Aceptar</button>
-        <button onclick="limpiarDNI()">Limpiar</button>
+        <hr>
+        <h3>Validar DNI</h3>
+
+        <label for="dni">Introduce tu número de DNI:</label>
+        <input type="number" id="dni" name="dni" style="width: 6.2em" />
+        <br><br>
+        <label for="letra">Introduce la letra de tu DNI:</label>
+        <input type="text" id="letra" name="letra" style="width: 1em; text-transform: capitalize; margin-left: 0.35em" />
+        
+        <br><br>    
+        <button onclick="validarDNI()" style="margin-left: 1em; width: 5em; height: 2em;" id="check">Validar</button>
+        <button onclick="limpiarDNI()" style="margin-left: 2em; width: 5em; height: 2em;" id="clear">Limpiar</button>
     </form>
+    
     <br>
     <div id="resultado"></div>
 
     <script src="./exercise3.js"></script>
-</body>
+    </body>
 </html>

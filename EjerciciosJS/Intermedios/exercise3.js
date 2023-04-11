@@ -1,57 +1,30 @@
-const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C',
-'K', 'E', 'T'];
-
 let avisoDNI = alert("Rellene el DNI.");
 
-
 function limpiarDNI() {
-    document.getElementById("numerosDNI").value = "";
-    document.getElementById("letraDNI").value = "";
+    document.getElementById("dni").value = "";
+    document.getElementById("letra").value = "";
     window.event.preventDefault();
 }
 
-function calcularDNI() {
-    document.getElementById(numerosDNI);
-    
-    if (numerosDNI < 0 || numerosDNI > 99999999 && letraDNI === letras) {
-
-        document.write("Funciona");
-    }
+function validarDNI() {
     window.event.preventDefault();
+
+    let dni = document.getElementById("dni").value;
+    let letra = document.getElementById("letra").value.toUpperCase();
+    const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
     
-    }
-    
-
-
-
-
-
-/*
-if ((numeroDNI == null) || (letraDNI == null)) {
-    alert("Debe escribir un número de DNI.");
-    window.location.reload();
-}
-else if (numeroDNI != null && numeroDNI.length < 0) {
-
-    alert("El número del DNI introducido no es válido.");
-    window.location.reload();
-
-} else if (numeroDNI != null && numeroDNI.length < 99999999) {
-    alert("El número del DNI introducido no es válido.");
-    window.location.reload();
-}
-else if (letraDNI != null && letraDNI != letras) {
-
-    alert("La letra del DNI introducida no es válida.");
-    window.location.reload();
-
+    if (dni < 0 || dni > 99999999) {
+        document.getElementById("resultado").innerHTML = "El número indicado no es válido.";
     } else {
-        alert("DNI correcto");
-        document.write("El DNI escrito es: " + numeroDNI+letraDNI);
-    }
-*/
-    
-
+        let resto = dni % 23;
+        let operacionLetra = letras[resto];
+        if (letra !== operacionLetra) {
+            document.getElementById("resultado").innerHTML = "La letra que ha indicado no corresponde con el número.";
+        } else {
+            document.getElementById("resultado").innerHTML = "El número y la letra de DNI son correctos.";
+        }
+			}
+		}
 
 
 

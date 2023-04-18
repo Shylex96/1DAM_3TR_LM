@@ -8,13 +8,15 @@ function verifyNumber() {
     const inputBlue = document.getElementById('input3').value;
 
     if (inputRed == "" || inputGreen == "" || inputBlue == "") {
-        // const aviso = document.getElementById(avisos);
-        document.getElementById("avisos").innerHTML = "No puede haber campos sin rellenar.";
+
+        // document.getElementById("avisos").innerHTML = "No puede haber campos sin rellenar.";
+        alert("No puede haber campos sin rellenar");
 
     } else if (((inputRed < 0 || inputRed > 255) || (inputGreen < 0 || inputGreen > 255) || (inputBlue < 0 || inputBlue > 255))) {
 
-        document.getElementById("avisos").innerHTML = "Los campos deben contener números comprendidos entre 0 y 255.";
-        
+        // document.getElementById("avisos").innerHTML = "Los campos deben contener números comprendidos entre 0 y 255.";
+        alert("Los campos deben contener números comprendidos entre 0 y 255.");
+
     } else {
         // rgb(62, 37, 37);
         let colorFondo = "rgb(" + inputRed + ", " + inputGreen + ", " + inputBlue + ")";

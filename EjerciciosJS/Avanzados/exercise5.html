@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 5</title>
+</head>
+<body>
+
+    <h1>Ejercicios Avanzados</h1>
+
+    <h2>Generar tabla</h2>
+    <p>Introduce el número de filas y columnas:</p>
+    <form>
+        <label for="filas">Filas:</label>
+        <input type="number" id="filas" name="filas" style="width: 3em;">
+        <label for="columnas">Columnas:</label>
+        <input type="number" id="columnas" name="columnas" style="width: 3em;">
+        <button type="button" onclick="generarTabla()">Generar tabla</button>
+        <button type="button" onclick="resetTabla()">Reset</button>
+    </form>
+    <div id="tabla-container"></div>
+    
+    <script src="./exercise5.js"></script>
+</body>
+</html>

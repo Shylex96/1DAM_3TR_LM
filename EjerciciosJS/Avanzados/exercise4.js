@@ -19,11 +19,11 @@ document.querySelector("button").addEventListener("click", () => {
 
     if (texto.trim() !== "") {
 
-    const br = document.createElement("br");
+    const p = document.createElement("p");
 
-    br.textContent = texto;
+    p.textContent = texto;
 
-    div.appendChild(br);
+    div.appendChild(p);
 
     input.value = "";
     }

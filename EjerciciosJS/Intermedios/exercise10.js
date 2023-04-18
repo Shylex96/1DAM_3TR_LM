@@ -8,7 +8,7 @@ const imagen3 = document.getElementById("imagen_oculta3");
 const imagen4 = document.getElementById("imagen_oculta4");
 
 function mostrarImagen1() {
-  imagen1.style.display = "inline-block";
+	imagen1.style.display = "inline-block";
 	imagen2.style.display = "none";
 	imagen3.style.display = "none";
 	imagen4.style.display = "none";
@@ -16,7 +16,7 @@ function mostrarImagen1() {
 }
 
 function mostrarImagen2() {
-  imagen2.style.display = "inline-block";
+	imagen2.style.display = "inline-block";
 	imagen1.style.display = "none";
 	imagen3.style.display = "none";
 	imagen4.style.display = "none";
@@ -24,7 +24,7 @@ function mostrarImagen2() {
 }
 
 function mostrarImagen3() {
-  imagen3.style.display = "inline-block";
+	imagen3.style.display = "inline-block";
 	imagen1.style.display = "none";
 	imagen2.style.display = "none";
 	imagen4.style.display = "none";
@@ -32,7 +32,7 @@ function mostrarImagen3() {
 }
 
 function mostrarImagen4() {
-  imagen4.style.display = "inline-block";
+	imagen4.style.display = "inline-block";
 	imagen1.style.display = "none";
 	imagen2.style.display = "none";
 	imagen3.style.display = "none";

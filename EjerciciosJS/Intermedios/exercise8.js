@@ -1,5 +1,5 @@
 function enviarCadena() {
-  let cadena = document.getElementById("cadenatxt").value;
+	let cadena = document.getElementById("cadenatxt").value;
 	cadenatxt.value = "";
 	esPalindromo(cadena);
 }

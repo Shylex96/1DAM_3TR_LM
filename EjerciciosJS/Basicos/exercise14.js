@@ -1,24 +1,15 @@
-//NO ESTÁ HECHO
-
 let cadena = prompt("Ingrese una cadena:");
-const vocales = ["a", "e", "i", "o", "u"];
+let vocales = ["a", "e", "i", "o", "u"];
+document.write("Analizando la cadena: " + cadena + "<br><br>");
 
-// Inicializar variables para almacenar las posiciones de cada vocal
-let posicionesA = "";
-let posicionesE = "";
-let posicionesI = "";
-let posicionesO = "";
-let posicionesU = "";
+for (i = 0; i < vocales.length; i++) {
+    let vocal = vocales[i];
 
-for (let i = 0; i < cadena.length; i++) {
-	// usar substring para la posicion del caracter
-    // indexOf le das la palabra 
+    for (j = 0; j < cadena.length; j++) {
+        let letra = cadena.charAt(j);
+
+        if (letra === vocal) {
+            document.write("La vocal " +vocal + " aparece en la posición: " + (j+1) + "<br>");
+        }
+    }
 }
-
-// Mostrar las posiciones de las vocales en la cadena
-document.write("Analizando la palabra: " + cadena + "<br><br>");
-document.write("La vocal 'a' aparece en: " + posicionesE.slice(0, -2) + "<br>");
-document.write("La vocal 'e' aparece en: " + posicionesE.slice(0, -2) + "<br>");
-document.write("La vocal 'i' aparece en: " + posicionesE.slice(0, -2) + "<br>");
-document.write("La vocal 'o' aparece en: " + posicionesE.slice(0, -2) + "<br>");
-document.write("La vocal 'u' aparece en: " + posicionesE.slice(0, -2) + "<br>");

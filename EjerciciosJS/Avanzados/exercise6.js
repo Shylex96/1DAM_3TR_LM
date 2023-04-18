@@ -18,7 +18,7 @@ function verifyNumber() {
         alert("Los campos deben contener números comprendidos entre 0 y 255.");
 
     } else {
-        // rgb(62, 37, 37);
+        
         let colorFondo = "rgb(" + inputRed + ", " + inputGreen + ", " + inputBlue + ")";
         document.body.style.backgroundColor = colorFondo;
     }

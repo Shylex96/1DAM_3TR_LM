@@ -1,30 +1,27 @@
-// function mostrar() {
-//     let textoEscrito = document.getElementById('texto').value;
-//     texto.value = "";
-//     texto.focus();
+function mostrar() {
+    let textoEscrito = document.getElementById('texto').value;
+    texto.value = "";
+    texto.focus();
 
-//     let agregarTexto = document.createTextNode(textoEscrito);
-//     document.getElementById("textos").appendChild(agregarTexto);
-//     //document.getElementById("textos").innerHTML = document.getElementById("textos").innerHTML + textoEscrito + `<br/>`;
-//     //document.getElementById("textos").innerHTML + textoEscrito + `<br/>`
-//     //document.getElementById("textos").innerHTML = textoEscrito + document.getElementById("textos").innerHTML + `<br/>`;
-//     document.getElementById("textos").innerHTML
-// }
+    let agregarTexto = document.createTextNode(textoEscrito);
+    document.getElementById("textos").appendChild(agregarTexto);
+    document.getElementById("textos").innerHTML = document.getElementById("textos").innerHTML + `<br/>`;
+}
 
-const input = document.getElementById("texto");
-const div = document.getElementById("textos");
+// const input = document.getElementById("texto");
+// const div = document.getElementById("textos");
 
-document.querySelector("button").addEventListener("click", () => {
-    const texto = input.value;
+// document.querySelector("button").addEventListener("click", () => {
+//     const texto = input.value;
 
-    if (texto.trim() !== "") {
+//     if (texto.trim() !== "") {
 
-    const p = document.createElement("p");
+//     const p = document.createElement("p");
 
-    p.textContent = texto;
+//     p.textContent = texto;
 
-    div.appendChild(p);
+//     div.appendChild(p);
 
-    input.value = "";
-    }
-});
+//     input.value = "";
+//     }
+// });

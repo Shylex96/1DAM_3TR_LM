@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicio 8</title>
+</head>
+<body>
+
+    <h1>Ejercicios Avanzados</h1>
+    <hr>
+
+<!-- 
+        Ejercicio 8: Diseñar una web que muestre un cuadro famoso en el centro y justo
+        abajo, una descripción del mismo (título, autor, técnica, ubicación, …). También
+        colocar un par de botones a izquierda y derecha del cuadro de manera que al
+        pulsarlos nos desplacemos a otros cuadros más.
+-->
+
+<div class="container" style="display: flex; justify-content: center; font-weight: 800;">
+
+    <div style="position: absolute; margin-right: 12em; margin-top: 7.5em; font-size: 2.5rem;" id="flecha-izq" onclick="moverIzq()">←</div>
+
+    <div style="position: absolute; margin-left: 12em; margin-top: 7.5em; font-size: 2.5rem;" id="flecha-der" onclick="moverDer()">→</div>
+
+    <p style="font-size: 3em;">Cuadro</p>
+
+    <div class="cuadroExplicativo" style="display: block; position: absolute; width: 20em; height: 30em; margin-top: 10em; border: 1px solid #000">
+
+        <div class="cuadro" id="cuadro" style="display: block; position: absolute; width: 20em; height: 20em;">
+
+            <img style="display: block; width: 100%; height: 100%; object-fit: cover;" id="cuadro1" src="./img/exercise8/carrusel1.png" alt="Jett - Valorant">
+            <img style="display: none; width: 100%; height: 100%; object-fit: cover;" id="cuadro2" src="./img/exercise8/carrusel2.jpg" alt="Portada - Valorant">
+            <img style="display: none; width: 100%; height: 100%; object-fit: cover;" id="cuadro3" src="./img/exercise8/carrusel3.png" alt="Portada - Viper">
+            <img style="display: none; width: 100%; height: 100%; object-fit: fill;" id="cuadro4" src="./img/exercise8/carrusel4.jpg" alt="Ninja Dance">
+
+        <div class="descripcion" style="display: block; position: absolute; width: 20em; height: 10em; background-color: #000;">
+
+            <span style="display: block; margin-left: 0.25em; margin-top: 0.5em; color: #fff" id="descripcion1">Título: Jett<br><br>Autor: Esteban<br><br>Técnica: Aquarela<br><br>Ubicación: Valorant</span>
+            <span style="display: none; margin-left: 0.25em; margin-top: 0.5em; color: #fff" id="descripcion2">Título: Valorant<br><br>Autor: Lucía<br><br>Técnica: Modelado<br><br>Ubicación: Valorant</span>
+            <span style="display: none; margin-left: 0.25em; margin-top: 0.5em; color: #fff" id="descripcion3">Título: Viper Team<br><br>Autor: Saray<br><br>Técnica: Texturizada<br><br>Ubicación: Valorant</span>
+            <span style="display: none; margin-left: 0.25em; margin-top: 0.5em; color: #fff" id="descripcion4">Título: Ninja Team<br><br>Autor: Pablo<br><br>Técnica: Abstract<br><br>Ubicación: Valorant</span>
+
+        </div>
+    </div>
+</div>
+
+    
+    <script src="./exercise8.js"></script>
+</body>
+</html>

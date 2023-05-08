@@ -34,6 +34,7 @@ contador = anterior;
 function moverDer() {
 let siguiente = (contador+1)%total;
 
+
 aImages[contador].style.display = "none";
 aImages[siguiente].style.display = "block";
 aDescripciones[contador].style.display = "none";
@@ -41,3 +42,4 @@ aDescripciones[siguiente].style.display = "block";
 contador = siguiente;
 
 }
+

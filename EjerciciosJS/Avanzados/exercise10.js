@@ -66,3 +66,4 @@ function revelarResultado() {
 function volverIntento() {
     window.location.href = "exercise10_1.html";
 }
+

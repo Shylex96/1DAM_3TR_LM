@@ -1,0 +1,237 @@
+Debugging en el navegador
+
+El “debugging” – una herramienta especial de UI para desarrolladores que nos permite encontrar y reparar errores más fácilmente.
+
+El comando “debugger”
+También podemos pausar el código utilizando el comando debugger, así:
+
+function hello(name) {
+  let phrase = `Hello, ${name}!`;
+
+  debugger;  // <-- the debugger stops here
+
+  say(phrase);
+}
+
+Este comando solo funciona cuando el panel de herramientas de desarrollo está abierto, de otro modo el navegador lo ignora.
+
+En nuestro ejemplo, hello() se llama durante la carga de la página, entonces la forma mas fácil de activar el debugger es recargando la página. Entonces presionemos F5 (en Windows ó Linux) ó Cmd+R (en Mac).
+
+Como el breakpoint está definido, la ejecución se detiene en la línea 4 y nos permite ver los detalles de la ejución.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Estilo de codificación
+Nuestro código debe ser lo más limpio y fácil de leer como sea posible.
+
+Ese es en realidad el arte de la programación: tomar una tarea compleja y codificarla de manera correcta y legible para los humanos. Un buen estilo de código ayuda mucho en eso.
+
+[Consultar la imágen: 'codigoLimpio.png' para entender mejor la estructura y sintaxis].
+
+
+- Llaves
+En la mayoría de proyectos de Javascript las llaves están escritas en estilo “Egipcio” con la llave de apertura en la misma linea como la correspondiente palabra clave – no en una nueva linea. Debe haber también un espacio antes de la llave de apertura, como esto:
+
+if (condition) {
+  // hacer esto
+  // ...y eso
+  // ...y eso
+}
+
+Una construcción de una sola línea, como if (condition) doSomething(), es un caso límite importante. ¿Deberíamos usar llaves?
+
+Aquí están las variantes anotadas para que puedas juzgar la legibilidad por ti mismo.
+
+😠 Los principiantes a veces hacen eso. ¡Malo! Las llaves no son necesarias:
+if (n < 0) {alert(`Power ${n} is not supported`);}
+
+😠 Dividir en una línea separada sin llaves. Nunca haga eso, es fácil cometer un error al agregar nuevas líneas:
+if (n < 0)
+  alert(`Power ${n} is not supported`);
+
+😏 Una línea sin llaves: aceptable, si es corta:
+if (n < 0) alert(`Power ${n} is not supported`);
+
+😃 La mejor variante:
+if (n < 0) {
+  alert(`Power ${n} is not supported`);
+}
+
+Recuerda: Para un código muy breve, se permite una línea, p. if (cond) return null. Pero un bloque de código (la última variante) suele ser más legible.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Tamaño de línea
+A nadie le gusta leer una larga línea horizontal de código. Es una buena práctica dividirlos.
+
+Por ejemplo:
+
+// acento grave ` permite dividir la cadena de caracteres en múltiples líneas
+let str = `
+  ECMA International's TC39 is a group of JavaScript developers,
+  implementers, academics, and more, collaborating with the community
+  to maintain and evolve the definition of JavaScript.
+`;
+
+Y para sentencias if:
+
+if (
+  id === 123 &&
+  moonPhase === 'Waning Gibbous' &&
+  zodiacSign === 'Libra'
+) {
+  letTheSorceryBegin();
+}
+
+La longitud máxima de la línea debe acordarse con el equipo de trabajo. Suele tener 80 o 120 caracteres.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Indentación (sangría)
+Hay dos tipos de indentación:
+
+Indentación horizontal: 2 o 4 espacios.
+
+Se realiza una sangría horizontal utilizando 2 o 4 espacios o el símbolo de tabulación horizontal (key Tabulador). Cuál elegir es una vieja guerra santa. Los espacios son más comunes hoy en día.
+
+Una ventaja de los espacios sobre las tabulaciones es que los espacios permiten configuraciones de sangría más flexibles que el símbolo del tabulador.
+
+Por ejemplo, podemos alinear los argumentos con el paréntesis de apertura, así:
+
+show(parameters,
+     aligned, // 5 espacios de relleno a la izquierda
+     one,
+     after,
+     another
+  ) {
+  // ...
+}
+
+Indentación vertical: líneas vacías para dividir código en bloques lógicos.
+
+Incluso una sola función a menudo se puede dividir en bloques lógicos. En el siguiente ejemplo, la inicialización de variables, el bucle principal y la devolución del resultado se dividen verticalmente:
+
+function pow(x, n) {
+  let result = 1;
+  //              <--
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+  //              <--
+  return result;
+}
+
+Insertar una nueva línea extra donde ayude a hacer el código mas legible. No debe haber más de nueve líneas de código sin una indentación vertical.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Punto y coma
+Debe haber un punto y coma después de cada declaración, incluso si se puede omitir.
+
+Hay idiomas en los que un punto y coma es realmente opcional y rara vez se usa. Sin embargo, en JavaScript, hay casos en los que un salto de línea no se interpreta como un punto y coma, lo que deja el código vulnerable a errores.
+
+Si eres un programador de JavaScript experimentado, puedes elegir un estilo de código sin punto y coma como StandardJS. De lo contrario, es mejor usar punto y coma para evitar posibles escollos. La mayoría de los desarrolladores ponen punto y coma.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Niveles anidados
+Intenta evitar anidar el código en demasiados niveles de profundidad.
+
+Algunas veces es buena idea usar la directiva “continue” en un bucle para evitar anidamiento extra.
+
+Por ejemplo, en lugar de añadir un if anidado como este:
+
+for (let i = 0; i < 10; i++) {
+  if (cond) {
+    ... // <- un nivel más de anidamiento
+  }
+}
+
+Podemos escribir:
+
+for (let i = 0; i < 10; i++) {
+  if (!cond) continue;
+  ...  // <- sin nivel extra de anidamiento
+}
+
+Algo similar se puede hacer con if/else y return.
+
+Por ejemplo, las dos construcciones siguientes son idénticas.
+
+Opción 1:
+
+function pow(x, n) {
+  if (n < 0) {
+    alert("Negative 'n' not supported");
+  } else {
+    let result = 1;
+
+    for (let i = 0; i < n; i++) {
+      result *= x;
+    }
+
+    return result;
+  }
+}
+
+Opción 2:
+
+function pow(x, n) {
+  if (n < 0) {
+    alert("Negative 'n' not supported");
+    return;
+  }
+
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+El segundo es más legible porque el “caso especial” de n < 0 se maneja desde el principio. Una vez que se realiza la verificación, podemos pasar al flujo de código “principal” sin la necesidad de anidamiento adicional.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Polyfills y transpiladores
+
+Transpiladores:
+Un transpilador es un software que traduce un código fuente a otro código fuente. Puede analizar (“leer y entender”) código moderno y rescribirlo usando sintaxis y construcciones más viejas para que también funcione en intérpretes antiguos.
+
+Por ejemplo, antes del año 2020 JavaScript no tenía el operador “nullish coalescing” ??. Entonces, si un visitante lo usa en un navegador desactualizado, este fallaría en entender un código como height = height ?? 100.
+
+Un transpilador analizaría nuestro código y rescribiría height ?? 100 como (height !== undefined && height !== null) ? height : 100.
+
+// antes de ejecutar el transpilador
+height = height ?? 100;
+
+// después de ejecutar el transpilador
+height = (height !== undefined && height !== null) ? height : 100;
+
+Ahora el código rescrito es apto para los intérpretes de JavaScript más viejos.
+
+Polyfills:
+Nuevas características en el lenguaje pueden incluir no solo construcciones sintácticas y operadores, sino también funciones integradas.
+
+Por ejemplo, Math.trunc(n) es una función que corta la parte decimal de un número, ej. Math.trunc(1.23) devuelve 1.
+
+En algunos (muy desactualizados) intérpretes JavaScript no existe Math.trunc, así que tal código fallará.
+
+Aquí estamos hablando de nuevas funciones, no de cambios de sintaxis. No hay necesidad de transpilar nada. Solo necesitamos declarar la función faltante.
+
+Un script que actualiza o agrega funciones nuevas es llamado “polyfill”. Este llena los vacíos agregando las implementaciones que faltan.
+
+En este caso particular, el polyfill para Math.trunc es un script que lo implementa:
+
+if (!Math.trunc) { // no existe tal función
+  // implementarla
+  Math.trunc = function(number) {
+    // Math.ceil y Math.floor existen incluso en los intérpretes antiguos
+    // los cubriremos luego en el tutorial
+    return number < 0 ? Math.ceil(number) : Math.floor(number);
+  };
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------

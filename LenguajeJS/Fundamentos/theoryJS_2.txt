@@ -1,4 +1,4 @@
-Bucles: while y for
+hHBucles: while y for
 
 El bucle “while”
 El bucle while (mientras) tiene la siguiente sintaxis:
@@ -272,6 +272,20 @@ switch (a) {
 
   default:
     alert('El resultado es extraño. Realmente.');
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Captura de eventos por coordenadas:
+
+HTML:
+<h1 onmouseover="coordenadas"(event)">JavaScript</h1>
+
+JS:
+function coordenadas(event) {
+let coorX = event.clientX;
+let coorY = event.clientY;
+console.log("X: " +coorX + "Y: " +coorY);
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------

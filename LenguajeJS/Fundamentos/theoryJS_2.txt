@@ -289,3 +289,46 @@ console.log("X: " +coorX + "Y: " +coorY);
 }
 
 -------------------------------------------------------------------------------------------------------------------------------------
+
+Objeto History:
+
+Back -> Retroceder en el historial 1 paso.
+Forward -> Avanzar en el historial 1 paso.
+Go -> Permite ir directamente a un punto concreto en vez de 1 en 1.
+
+Ejemplo: 
+HTML: 
+
+<a onclick="volver()"></a>
+<br>
+<a onclick="avanzar()"></a>
+
+JS:
+
+function volver() {
+  history.back();
+}
+
+function avanzar() {
+  history.forward();
+}
+
+function ir() {
+  history.go(-4);
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Objeto Navigator:
+
+Para obtener información del navegador como conexión, versión, cookies, memoria, etc.
+(https://developer.mozilla.org/es/docs/Web/API/Navigator)
+
+function mostrarInfoNavegador() {
+  console.log(Navigator.appVersion);
+  console.log(Navigator.language);
+  console.log(Navigator.cookieEnabled);
+  console.log(Navigator.geolocation);
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------
